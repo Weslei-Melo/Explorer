@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-size: 62.5%;
+    user-select: none;
+
+}
+
+body{
+    background-color: #E5E5E5 ;
+}
+
+main{
+    width: 82.1rem;
+    height: 33.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 19.2rem auto 18.8rem ;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 126.166px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #323238;
+}
+
+svg.setcolor path {
+    fill: #02799D;
+}
+
+svg.setcolor .contour{
+    fill:white;
+}
+
+.setColorTimer path{
+    fill: #02799D;
+}
+.timer{
+    display: flex;
+    width: 32.1rem;
+    height: 11.7rem;
+    gap: none;
+    margin-bottom: 1.7rem ;
+}
+
+.cardTree, .cardStore, .cardFire, .cardCloud{
+    width: 100%;
+    padding-bottom: 0;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.controls{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+}
+
+button{
+    width: 4.8rem;
+    height: 4.8rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+}
+
+/* svg {
+    border: 1px solid red;
+} */
+
+
+.icons{
+    width: 30.8rem;
+   /* height: 33.6rem;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0;
+    gap: 1.6rem;
+  
+    
+    cursor: pointer;
+}
+
+.retorna {
+    background-color: none;
+}
+
+/*
+azul 02799D/
+
