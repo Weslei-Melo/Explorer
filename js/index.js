@@ -24,17 +24,25 @@ let contourCloud = document.querySelector('.contourCloud');
 let contourStore = document.querySelector('.contourStore');
 let contourFire = document.querySelector('.contourFire');
 
+let dark = document.querySelector('#lua');
+let light = document.querySelector('#sol');
+let body = document.querySelector('#bodyy');
+let controls = document.querySelector('.controls')
+let timer = document.querySelector('.timer')
+
 let timerOut;
 
-// const display = Display({
-//     minutesDisplay,
-//     secondsDisplay,
-//     minutsStop,
-//     secondsStop,
-//     stopp,
-//     timerOut,
-//     contclick
-// })
+const musicTree = new Audio('Floresta.wav');
+const musicCloud = new Audio('Chuva.wav');
+const musicStore = new Audio('Cafeteria.wav');
+const musicFire = new Audio('Lareira.wav');
+
+const inputrangeTree = document.querySelector('.inputrangeTree')
+const inputrangeCloud = document.querySelector('.inputrangeCloud')
+const inputrangeFire = document.querySelector('.inputrangeFire')
+const inputrangeStore = document.querySelector('.inputrangeStore')
+
+
 function countDown (){
     if(contclick%2==0){
         return
@@ -69,27 +77,48 @@ function resetDisplay(){
     stopp.classList.remove('altera')
 }
 
+function setVolume(audio,value) {
+    audio.volume = value;
+    
+}
+
+function playMusic( music){
+    
+    music.play();
+    music.loop = true; 
+}
+
+function stopMusic( music){
+    console.log("Parouuu")
+    music.pause();
+    
+}
 
 play.addEventListener('click' , function(event){
-    event.target.classList.toggle('setColorTimer')
+    event.currentTarget.classList.toggle('setColorTimer')
+    console.log(event.currentTarget)
     contclick++
     if(contclick%2==1){
         countDown();
     }else{
         clearTimeout(timerOut);
-        play.classList.remove('altera')
         return
     }
-    
 })
 
 stopp.addEventListener('click' , function(event){
     contclick=2;
     // console.log(event.currentTarget.parentElement.firstChild.nextElementSibling)
     // event.currentTarget.parentElement.firstChild.nextElementSibling.classList.remove('setcolorTimer');
-    event.target.classList.toggle('setColorTimer')
+    // console.log(play)
+    play.classList.remove('setColorTimer')
+    // event.currentTarget.classList.toggle('setColorTimer')
+    
+    // setTimeout(function(){
+    //     console.log("Oiiii")
+    // },1000)
+    event.currentTarget.classList.add('classAmimation')
     resetDisplay()
-    play.classList.remove('altera')
     clearTimeout(timerOut);
     
 })
@@ -113,70 +142,114 @@ aux.addEventListener('click', function(){
     let xx = Number(prompt('Digite o valor para cronometrar: ')) || 0
     minutsStop = String(xx).padStart(2,'0');
     secondsStop = secondsDisplay.textContent
+    updateDisplay(minutsStop,secondsStop)
 });
 
-const musicTree = new Audio('Floresta.wav');
-const musicCloud = new Audio('Chuva.wav');
-const musicStore = new Audio('Cafeteria.wav');
-const musicFire = new Audio('Lareira.wav');
 
 
+inputrangeTree.addEventListener('input', () => {
+    setVolume(musicTree,inputrangeTree.value)
+})
+inputrangeFire.addEventListener('input', () => {
+    setVolume(musicFire,inputrangeFire.value)
+})
+inputrangeStore.addEventListener('input', () => {
+    setVolume(musicStore,inputrangeStore.value)
+})
+inputrangeCloud.addEventListener('input', () => {
+    setVolume(musicCloud,inputrangeCloud.value)
+})
 
 cardTree.addEventListener('click' , function(event){
+    
     // const firstPath = cardTree.querySelector('path')
     contTree++
     console.log(event.currentTarget.nextElementSibling.nextElementSibling)
-    event.currentTarget.firstChild.classList.toggle('setcolor')
-    if(contTree%2==0) {
-        musicTree.pause();
-        // cardTree.classList.remove('altera')
-        
-    } else{
-        musicTree.play();
-        musicTree.loop = true; 
-        // cardTree.classList.add('altera')
+    if(cardTree.classList.contains('setColorDark')){
+        event.currentTarget.firstChild.classList.toggle('setColorDarkSelect')
+    }else{
+        event.currentTarget.firstChild.classList.toggle('setcolor')
     }
+    // setVolume(musicTree,0.5)
+    contTree%2==0 ? stopMusic(musicTree) :playMusic(musicTree)
 })
 
 cardCloud.addEventListener('click' , function(event){
     contCloud++ 
-    event.currentTarget.firstChild.classList.toggle('setcolor')
-    if(contCloud%2==0) {
-        musicCloud.pause();
-        // cardCloud.classList.remove('altera')
-    } else{
-        musicCloud.play();
-        musicCloud.loop = true; 
-        // cardCloud.classList.add('altera')
+    if(cardCloud.classList.contains('setColorDark')){
+        event.currentTarget.firstChild.classList.toggle('setColorDarkSelect')
+    }else{
+        event.currentTarget.firstChild.classList.toggle('setcolor')
     }
-    
+    // setVolume(musicCloud,0.5)
+    console.log(event.currentTarget)
+    contCloud%2==0 ? stopMusic(musicCloud) :playMusic(musicCloud)
 })
 
 
 cardStore.addEventListener('click' , function(event){
     contStore++ 
-    event.currentTarget.firstChild.classList.toggle('setcolor')
-    if(contStore%2==0) {
-        musicStore.pause();
-        // cardStore.classList.remove('altera')
-    } else{
-        musicStore.play();
-        musicStore.loop = true; 
-        // cardStore.classList.add('altera')
+    if(cardStore.classList.contains('setColorDark')){
+        event.currentTarget.firstChild.classList.toggle('setColorDarkSelect')
+    }else{
+        event.currentTarget.firstChild.classList.toggle('setcolor')
     }
+    // setVolume(musicStore,0.5)
+    contStore%2==0 ? stopMusic(musicStore) :playMusic(musicStore)
     
 })
 
 cardFire.addEventListener('click' , function(event){
     contFire++ 
-    event.currentTarget.firstChild.classList.toggle('setcolor')
-    if(contFire%2==0) {
-        musicFire.pause();
-        // cardFire.classList.remove('altera')
-    } else{
-        musicFire.play();
-        musicFire.loop = true; 
-        // cardFire.classList.add('altera')
+    if(cardFire.classList.contains('setColorDark')){
+        event.currentTarget.firstChild.classList.toggle('setColorDarkSelect')
+    }else{
+        event.currentTarget.firstChild.classList.toggle('setcolor')
     }
+    // setVolume(musicFire,0.5)
+    contFire%2==0 ? stopMusic(musicFire) :playMusic(musicFire)
+    
+})
+
+dark.addEventListener('click', function(){
+    dark.classList.add('hide');
+    light.classList.remove('hide')
+    boddy.classList.remove('setBackgroud')
+    cardCloud.classList.remove('setColorDark')
+    cardTree.classList.remove('setColorDark')
+    cardFire.classList.remove('setColorDark')
+    cardStore.classList.remove('setColorDark')
+    controls.classList.remove('setColorDarkTimer')
+    timer.classList.remove('setColorTimer')
+    cardTree.classList.remove('setColorCirculoDark')
+    cardTree.classList.remove('setColorRetanguloDark')
+    cardFire.classList.remove('setColorCirculoDark')
+    cardFire.classList.remove('setColorRetanguloDark')
+    cardStore.classList.remove('setColorCirculoDark')
+    cardStore.classList.remove('setColorRetanguloDark')
+    cardCloud.classList.remove('setColorCirculoDark')
+    cardCloud.classList.remove('setColorRetanguloDark')
+    
+
+})
+
+light.addEventListener('click', function(){
+    light.classList.add('hide');
+    dark.classList.remove('hide');
+    boddy.classList.add('setBackgroud');
+    cardCloud.classList.add('setColorDark')
+    cardTree.classList.add('setColorDark')
+    cardFire.classList.add('setColorDark')
+    cardStore.classList.add('setColorDark')
+    controls.classList.add('setColorDarkTimer')
+    timer.classList.add('setColorTimer')
+    cardTree.classList.add('setColorCirculoDark')
+    cardTree.classList.add('setColorRetanguloDark')
+    cardFire.classList.add('setColorCirculoDark')
+    cardFire.classList.add('setColorRetanguloDark')
+    cardStore.classList.add('setColorCirculoDark')
+    cardStore.classList.add('setColorRetanguloDark')
+    cardCloud.classList.add('setColorCirculoDark')
+    cardCloud.classList.add('setColorRetanguloDark')
     
 })

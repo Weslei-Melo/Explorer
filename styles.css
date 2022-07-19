@@ -21,7 +21,8 @@ main{
     margin: 19.2rem auto 18.8rem ;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: 126.166px;
+    font-size: 50rem;
+    line-height: 14.8rem;
 
     text-align: center;
     text-transform: uppercase;
@@ -37,9 +38,40 @@ svg.setcolor .contour{
     fill:white;
 }
 
+svg.setColorDarkSelect path {
+    fill: #0A3442;
+}
+
+svg.setColorDarkSelect .contour{
+    fill:white;
+}
+
+
+.setColorDark path{
+    fill: #3f3f42;
+}
+.setColorDark .contour{
+    fill: #C4C4CC;
+}
+
 .setColorTimer path{
     fill: #02799D;
 }
+
+.setColorDarkTimer path{
+    fill: #C4C4CC;
+}
+
+.setColorCirculoDark circle{
+    fill: white;
+}
+
+.setColorRetanguloDark rect{
+    fill: white;
+}
+
+
+
 .timer{
     display: flex;
     width: 32.1rem;
@@ -49,6 +81,7 @@ svg.setcolor .contour{
 }
 
 .cardTree, .cardStore, .cardFire, .cardCloud{
+    position: relative;
     width: 100%;
     padding-bottom: 0;
     /* border: 1px solid black; */
@@ -57,6 +90,11 @@ svg.setcolor .contour{
     justify-content: center;
     
     
+    
+}
+
+.setColorTimer{
+    color: white;
 }
 
 .controls{
@@ -73,13 +111,10 @@ button{
     background-color: transparent;
     border: none;
     cursor: pointer;
-    
+    display: flex;
+
+    /* border: 1px solid black; */
 }
-
-/* svg {
-    border: 1px solid red;
-} */
-
 
 .icons{
     width: 30.8rem;
@@ -90,14 +125,69 @@ button{
     padding: 0;
     gap: 1.6rem;
   
-    
     cursor: pointer;
 }
 
-.retorna {
-    background-color: none;
+#sol, #lua{
+    position:fixed;
+    top: 6rem;
+    right: 6rem;
 }
 
-/*
-azul 02799D/
+.hide {
+    display: none;
+}
 
+.setBackgroud {
+    background-color: #29292E;  
+}
+
+.inputrangeTree , .inputrangeStore , .inputrangeFire , .inputrangeCloud  {
+    margin-top: 8rem;
+    accent-color: #323238;
+    width: 12rem;
+    position: absolute;
+    /* -webkit-appearance: none; */
+    background: #d3d3d3;
+    outline: none;
+    /* width: 100%; */
+    height: 0.7rem;
+    border-radius: 9px; 
+  }
+
+  /* .classAmimation {
+    animation-name: downup;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+    animation-delay: 200ms;
+  }
+
+  @keyframes updown{
+    0%{
+      background-color: #323238 ;
+    }
+  
+    100%{
+        background-color:  #02799D;
+    }
+  } */
+
+  button svg.classAmimation .contour {
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+        opacity: 1;
+        /* background-color: #323238 ; */
+        /* fill: #323238 ; */
+    }
+  
+    to {
+        opacity: 0;
+
+      /* fill: #02799D; */
+      background-color: #02799D;
+    }
+  }
