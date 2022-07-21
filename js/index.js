@@ -15,6 +15,7 @@ let stopp = document.querySelector('.stop');
 let most = document.querySelector('.most');
 let less = document.querySelector('.less');
 let cardTree = document.querySelector('.cardTree');
+const buttonTree = document.querySelector('.cardTree svg');
 let cardCloud = document.querySelector('.cardCloud');
 let cardStore = document.querySelector('.cardStore');
 let cardFire = document.querySelector('.cardFire');
@@ -160,18 +161,14 @@ inputrangeCloud.addEventListener('input', () => {
     setVolume(musicCloud,inputrangeCloud.value)
 })
 
-cardTree.addEventListener('click' , function(event){
-    
-    // const firstPath = cardTree.querySelector('path')
-    contTree++
-    console.log(event.currentTarget.nextElementSibling.nextElementSibling)
+buttonTree.addEventListener('click' , function(event){
     if(cardTree.classList.contains('setColorDark')){
-        event.currentTarget.firstChild.classList.toggle('setColorDarkSelect')
+        buttonTree.classList.toggle('setColorDarkSelect')
     }else{
-        event.currentTarget.firstChild.classList.toggle('setcolor')
+        buttonTree.classList.toggle('setcolor')
     }
-    // setVolume(musicTree,0.5)
-    contTree%2==0 ? stopMusic(musicTree) :playMusic(musicTree)
+    // // setVolume(musicTree,0.5)
+    musicTree.paused ? playMusic(musicTree) : stopMusic(musicTree)
 })
 
 cardCloud.addEventListener('click' , function(event){
