@@ -30,11 +30,11 @@ main{
     color: #323238;
 }
 
-svg.setcolor path {
+svg.setColorSelect path {
     fill: #02799D;
 }
 
-svg.setcolor .contour{
+svg.setColorSelect .contour{
     fill:white;
 }
 
@@ -62,13 +62,6 @@ svg.setColorDarkSelect .contour{
     fill: #C4C4CC;
 }
 
-.setColorCirculoDark circle{
-    fill: white;
-}
-
-.setColorRetanguloDark rect{
-    fill: white;
-}
 
 
 
@@ -155,39 +148,17 @@ button{
     border-radius: 9px; 
   }
 
-  /* .classAmimation {
-    animation-name: downup;
-    animation-duration: 700ms;
-    animation-fill-mode: forwards;
-    animation-delay: 200ms;
-  }
-
-  @keyframes updown{
-    0%{
-      background-color: #323238 ;
-    }
   
-    100%{
-        background-color:  #02799D;
-    }
-  } */
-
-  button svg.classAmimation .contour {
-    animation-duration: 3s;
+  .classButton {
+    animation-duration: 0.5s;
     animation-name: slidein;
   }
-  
-  @keyframes slidein {
-    from {
-        opacity: 1;
-        /* background-color: #323238 ; */
-        /* fill: #323238 ; */
-    }
-  
-    to {
-        opacity: 0;
 
-      /* fill: #02799D; */
-      background-color: #02799D;
+  @keyframes slidein {
+    0% {
+        opacity: 0;
+    }  
+    100% {
+        opacity: 1;
     }
-  }
+}
