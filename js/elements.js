@@ -18,10 +18,10 @@ export const boddy = document.querySelector('body');
 export const timer = document.querySelector('.timer')
 
 
-export const musicTree = new Audio('Floresta.wav');
-export const musicCloud = new Audio('Chuva.wav');
-export const musicStore = new Audio('Cafeteria.wav');
-export const musicFire = new Audio('Lareira.wav');
+export const musicTree = new Audio('../Sounds/Floresta.wav');
+export const musicCloud = new Audio('../Sounds/Chuva.wav');
+export const musicStore = new Audio('../Sounds/Cafeteria.wav');
+export const musicFire = new Audio('../Sounds/Lareira.wav');
 
 export const inputrangeTree = document.querySelector('.inputrangeTree')
 export const inputrangeCloud = document.querySelector('.inputrangeCloud')

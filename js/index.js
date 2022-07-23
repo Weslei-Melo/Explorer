@@ -69,7 +69,8 @@ const lightt = Light({
     most,
     less,
     stopp,
-    timer
+    timer,
+    play
 })
 
 

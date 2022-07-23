@@ -1,3 +1,4 @@
+
 export function Light({
     dark,
     light,
@@ -10,7 +11,8 @@ export function Light({
     most,
     less,
     stopp,
-    timer
+    timer,
+    play
 }){
     function modeLight(){
         dark.classList.add('hide');
@@ -24,6 +26,7 @@ export function Light({
         most.classList.remove('setColorDarkTimer')
         less.classList.remove('setColorDarkTimer')
         stopp.classList.remove('setColorDarkTimer')
+        play.classList.remove('setColorDarkTimer')
         timer.classList.remove('setColorTimer')
         }
 
