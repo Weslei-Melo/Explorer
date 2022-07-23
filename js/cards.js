@@ -25,10 +25,8 @@ export function Cards(){
         music.loop = true; 
     }
     
-    function stopMusic( musics){
-        for(let music of musics){
-            music.pause();
-        }  
+    function stopMusic( music){
+            music.pause();  
     }
     
     function setColorDark(cards){
