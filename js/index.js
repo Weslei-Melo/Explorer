@@ -6,7 +6,6 @@ import { Dark } from "./dark.js"
 import { Light } from "./light.js"
 import {minutesDisplay, secondsDisplay, stopp, most, less, musicCloud, musicFire, musicStore,musicTree, light, dark, cardCloud, cardFire, cardTree, cardStore, pausee, playy, timer, buttonTimer, inputrangeCloud,inputrangeFire, inputrangeStore, inputrangeTree } from "./elements.js"
 
-
 let minutsStop = minutesDisplay.textContent;
 let secondsStop = secondsDisplay.textContent;
 let timerOut;
@@ -73,7 +72,6 @@ const lightt = Light({
     playy
 })
 
-
 playy.addEventListener('click' , function(event){
     playy.classList.toggle('hide')
     pausee.classList.toggle('hide')
@@ -88,8 +86,6 @@ pause.addEventListener('click' , function(event){
     pausee.classList.toggle('hide')
     timerr.pause()
 })
-
-
 
 stopp.addEventListener('click' , function(event){
     playy.classList.remove('hide')
