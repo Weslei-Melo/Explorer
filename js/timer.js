@@ -1,12 +1,11 @@
 import { Display } from './display.js'
 import { Cards } from './cards.js'
-import { cardCloud, cardFire, cardStore, cardTree, pausee,  most, less ,playy, } from './elements.js'
+import { cardCloud, cardFire, cardStore, cardTree, pausee, playy, } from './elements.js'
 export function Timer({
     minutesDisplay,
     secondsDisplay,
     timerOut,
     stopMusic,
-    fReset,
     musicCloud,
     musicFire,
     musicStore,
@@ -22,6 +21,12 @@ export function Timer({
         minutesDisplay,
         secondsDisplay
     })
+
+    function fReset(){//animacao dos botoes
+        stopp.classList.remove('classButton');
+        most.classList.remove('classButton');
+        less.classList.remove('classButton');
+    }
     function countDown (){
 
             timerOut= setTimeout(function(){
@@ -97,6 +102,8 @@ export function Timer({
         pause,
         plus5minutes,
         minus5minutes,
-        resetControls
+        fReset,
+        resetControls,
+        
     }
 }

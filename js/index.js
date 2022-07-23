@@ -23,7 +23,6 @@ const timerr = Timer({
     secondsDisplay,
     timerOut,
     stopMusic: cards.stopMusic,
-    fReset: controlss.fReset,
     musicCloud,
     musicFire,
     musicStore,
@@ -92,11 +91,17 @@ stopp.addEventListener('click' , function(event){
     pausee.classList.add('hide')
     most.classList.remove('hide')
     less.classList.remove('hide')
+
     
     cards.resetAudio([musicCloud,musicFire,musicStore,musicTree])
     cards.setColor([cardCloud,cardFire,cardStore,cardTree])
     timerr.pause()
     timerr.resetDisplay()
+
+    stopp.classList.remove('classButton');
+    setTimeout(() => {
+        stopp.classList.add('classButton');
+    },10)
     
     clearTimeout(timerOut);
 })
