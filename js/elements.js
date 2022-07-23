@@ -1,6 +1,6 @@
 export const minutesDisplay = document.querySelector('.minutes');
 export const secondsDisplay = document.querySelector('.seconds');
-export const play = document.querySelector('.play');
+export const playy = document.querySelector('.play');
 export const pausee = document.querySelector('#pause');
 export const stopp = document.querySelector('.stop');
 export const most = document.querySelector('.most');

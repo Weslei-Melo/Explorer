@@ -10,7 +10,7 @@ export function Dark({
     pausee,
     less,
     stopp,
-    play,
+    playy,
     timer
 }){
     function modeDark(){
@@ -25,8 +25,8 @@ export function Dark({
         pausee.classList.add('setColorDarkTimer')
         less.classList.add('setColorDarkTimer')
         stopp.classList.add('setColorDarkTimer')
-        if(!play.classList.contains('setColorPlay')){
-            play.classList.add('setColorDarkTimer')
+        if(!playy.classList.contains('setColorPlay')){
+            playy.classList.add('setColorDarkTimer')
         }
         timer.classList.add('setColorTimer')
     }

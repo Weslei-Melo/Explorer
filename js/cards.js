@@ -26,7 +26,8 @@ export function Cards(){
     }
     
     function stopMusic( music){
-            music.pause();  
+            music.pause();
+             
     }
     
     function setColorDark(cards){

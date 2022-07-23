@@ -1,4 +1,6 @@
 import { Display } from './display.js'
+import { Cards } from './cards.js'
+import { cardCloud, cardFire, cardStore, cardTree, pausee,  most, less ,playy, } from './elements.js'
 export function Timer({
     minutesDisplay,
     secondsDisplay,
@@ -15,6 +17,7 @@ export function Timer({
     most,
     less
 }){
+    const cards = Cards()
     const display = Display({
         minutesDisplay,
         secondsDisplay
@@ -32,7 +35,12 @@ export function Timer({
                     display.updateDisplay(minutes-1,59);
                 }else{
                     display.updateDisplay(0,0);
-                    stopMusic([musicCloud,musicTree,musicFire,musicStore])
+                    cards.stopMusic(musicCloud)
+                    cards.stopMusic(musicTree)
+                    cards.stopMusic(musicFire)
+                    cards.stopMusic(musicStore)
+                    cards.setColor([cardCloud,cardFire,cardStore,cardTree])
+                    resetControls()
                     return
                 }
             }
@@ -60,7 +68,7 @@ export function Timer({
     function minus5minutes(){
         if((Number(minutesDisplay.textContent)-5)<0){
             display.updateDisplay(0,0);
-            play.classList.remove('setColorPlay');
+            playy.classList.remove('setColorPlay');
         }else{
             display.updateDisplay(Number(minutesDisplay.textContent)-5,Number(secondsDisplay.textContent));
         }
@@ -75,12 +83,20 @@ export function Timer({
         display.updateDisplay(minutsStop,secondsStop);
     }
 
+    function resetControls(){
+        pausee.classList.add('hide')
+        playy.classList.remove('hide')
+        less.classList.remove('hide')
+        most.classList.remove('hide')
+    }
+
     return {
         countDown,
         resetDisplay,
         play,
         pause,
         plus5minutes,
-        minus5minutes
+        minus5minutes,
+        resetControls
     }
 }

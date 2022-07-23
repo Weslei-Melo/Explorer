@@ -4,7 +4,7 @@ import { Cards } from "./cards.js"
 import { Timer } from "./timer.js"
 import { Dark } from "./dark.js"
 import { Light } from "./light.js"
-import {minutesDisplay, secondsDisplay, stopp, most, less, musicCloud, musicFire, musicStore,musicTree, light, dark, cardCloud, cardFire, cardTree, cardStore, pausee, play, timer, buttonTimer, inputrangeCloud,inputrangeFire, inputrangeStore, inputrangeTree } from "./elements.js"
+import {minutesDisplay, secondsDisplay, stopp, most, less, musicCloud, musicFire, musicStore,musicTree, light, dark, cardCloud, cardFire, cardTree, cardStore, pausee, playy, timer, buttonTimer, inputrangeCloud,inputrangeFire, inputrangeStore, inputrangeTree } from "./elements.js"
 
 
 let minutsStop = minutesDisplay.textContent;
@@ -53,7 +53,7 @@ const darkk = Dark({
     pausee,
     less,
     stopp,
-    play,
+    playy,
     timer
 })
 
@@ -70,12 +70,12 @@ const lightt = Light({
     less,
     stopp,
     timer,
-    play
+    playy
 })
 
 
-play.addEventListener('click' , function(event){
-    play.classList.toggle('hide')
+playy.addEventListener('click' , function(event){
+    playy.classList.toggle('hide')
     pausee.classList.toggle('hide')
     most.classList.add('hide')
     less.classList.add('hide')
@@ -84,7 +84,7 @@ play.addEventListener('click' , function(event){
 })
 
 pause.addEventListener('click' , function(event){
-    play.classList.toggle('hide')
+    playy.classList.toggle('hide')
     pausee.classList.toggle('hide')
     timerr.pause()
 })
@@ -92,7 +92,7 @@ pause.addEventListener('click' , function(event){
 
 
 stopp.addEventListener('click' , function(event){
-    play.classList.remove('hide')
+    playy.classList.remove('hide')
     pausee.classList.add('hide')
     most.classList.remove('hide')
     less.classList.remove('hide')
